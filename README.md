@@ -33,14 +33,15 @@ La valoración propia depende del tipo de comida que sea:
   - **Pan con sésamo** otorga 20 puntos.
   - **Pan casero** otorga 35 puntos.
   - **Pan parmesano** otorga 55 puntos.
-  - Además, las hamburguesas vegetarianas tienen otro plus igual a `2 * cantidad de letras del nombre de la legumbre`.
+- Además, las hamburguesas vegetarianas tienen otro plus igual a `2 * cantidad de letras del nombre de la legumbre`.
   
 
 ## 3. Comensales
 Nos piden agregar al modelo a los comensales. De los comensales nos interesa saber si _le agrada una commida_, esto depende de su gusto culinario:
 - A los **vegetarianos** les agradan las comidas que son aptas vegetariano y tienen una valoración mayor a 85.
-- A los de **hambre media** simplemente les agradan las comidas abundantes.
+- A los de **hambre popular** simplemente les agradan las comidas abundantes.
 - A los **exquisitos** les agradan las comidas que pesan entre 150gr y 300gr, y además tengan una valoración mayor a 100.
+
 Por ahora nos piden modelar estos tipos de comensales, sabiendo que es posible que se agreguen más en el futuro.
 
 
@@ -56,7 +57,7 @@ También se pide **poder elegir un plato** del menú para un comensal. Por ahora
 
 ## 5. Secreto parrillero
 Por último, se nos pide agregar a Rosendo al sistema para saber cómo queda su parrilla luego de cocinar para un grupo de comensales. Esto significa, al recibir colección de comensales:
-- Tomar sus pedidos, o sea, que elijan un plato.
+- Tomar sus pedidos, o sea, que elijan un plato del menú.
 - Cocinarlos todos: el secreto de Rosendo es dejar las comidas en la parrilla un rato más para que _se tuesten_. 
 Al tostar una comida, todas ellas reaccionan aumentando su valoración un 50%. Pero además, el asado pierde sus cortes con calidad de 1 o menos (porque se queman).
 
