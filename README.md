@@ -1,5 +1,10 @@
 # La Parrilla de Rosendo
-Rosendo tiene una parrilla y nos pidió un sistema para administrar el menú de su reciente parrilla.
+
+![La parrilla de Rosendo](images/parrilla.jpg)
+
+Nuestro amigo Rosendo inauguró su parrilla y nos pidió un sistema para administrar las comidas que ofrece, sus comensales y sacar algunas estadísticas.
+
+¡Comencemos! :yum:
 
 ## 1. Comidas
 Nos piden modelar los distintos platos que ofrece la parrilla. De cada uno de ellos nos interesa conocer:
@@ -69,7 +74,7 @@ Se quiere poder consultar:
 
 También se pide **poder elegir un plato** para un comensal - por ahora es cualquier plato que le guste. Si no le gusta ningún plato, lanzar un error. Si el plato existe, sacarlo de la cocina y hacer que el comensal lo coma.
 
-## 4. Criterios de hambre
+## 4. Criterios de selección de comida
 Extender el sistema por el cual un comensal elige una comida de la cocina. Sigue manteniendose que debe ser una comida que le guste, pero en vez de elegir cualquiera se utilizan los siguientes criterios:
 
 * Los **vegetarianos** eligen, entre las que les gustan, la primera que no sea abundante.
