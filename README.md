@@ -40,15 +40,24 @@ El _peso_ de la parrillada es la suma de los pesos de sus cortes. No es _apto ve
 ## 2. Comensales
 Ya tenemos la comida, ahora nos faltan los comensales. :fork_and_knife:
 
-De cada comensal nos interesa saber si **le agrada una comida**, lo cual dependerá de su gusto culinario:
-- a los **vegetarianos** les agradan las comidas que son aptas vegetariano y tienen una valoración mayor a 85;
-- a los de **hambre popular** simplemente les agradan las comidas abundantes;
-- a los **exquisitos** les agradan las comidas que pesan entre 150gr y 300gr, y además tienen una valoración mayor a 100.
+De cada comensal nos interesa saber: 
+* su **peso**, medido en gramos;
+* si **le agrada una comida**, lo cual dependerá de su gusto culinario;
+* las **comidas que comió**, una lista de todo lo que haya ingerido. Implementar un método `comer(unaComida)` que la agregue a la lista;
+* y si está **satisfecho**, lo cual explicaremos a continuación.
 
+Para que un comensal esté satisfecho, se tiene que cumplir que el peso de las comidas ingeridas sea mayor o igual al 1% de su propio peso _y además_ una condición que define cada comensal (para que quede claro: se tienen que cumplir _ambas_ condiciones).    
 
-_@faloi dice: hasta acá llegué..._
+Consideraremos los siguientes tipos de comensales:
 
-**TODO:** agregar registro de comidas. Se guardan en una lista, usarlo después para calcular si un comensal está satisfecho.
+### Vegetarianos
+Les agradan las comidas que son aptas vegetariano y tienen una valoración mayor a 85. La condición adicional para estar satisfechos es que ninguna comida de las ingeridas sea abundante.
+
+### Hambre popular
+Simplemente les agradan las comidas abundantes. No tienen ninguna condición adicional para estar satisfechos.
+
+### De paladar fino
+Les agradan las comidas que pesan entre 150 y 300 gramos, y además tienen una valoración mayor a 100. La condición adicional para satisfacerse es que la cantidad de comidas ingeridas sea par. 
 
 ## 3. Menú
 Se quiere agregar al modelo un menú, que tiene _todas las comidas_ que se ofrecen en la parrilla. Se quiere conocer
