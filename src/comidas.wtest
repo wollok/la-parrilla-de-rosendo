@@ -1,0 +1,45 @@
+import comidas.*
+
+describe  "Comidas" {
+	
+	const provo1 = new Provoleta(peso = 150, tieneEspecias=true, esCompleta = true)
+	const provo2 = new Provoleta(peso = 260, tieneEspecias=true, esCompleta = false)	
+	const provo3 = new Provoleta(peso = 260, tieneEspecias=false, esCompleta = false)
+	const vege1 = new HamburguesaVegetariana(pan=panDeMasaMadre, legumbre ="lentajas")
+	const carne1 = new HamburguesaDeCarne(pan=panIndustrial)
+	const parri1 = new Parrillada()
+	const corte1 = new Corte(peso=250, calidad=10 )
+	const corte2 = new Corte(peso = 150, calidad= 7)
+	const corte3 = new Corte(peso = 50, calidad = 8)
+	
+	fixture {
+			parri1.addCorte(corte1)
+			parri1.addCorte(corte2)
+			parri1.addCorte(corte3)
+	}
+	
+	test "provoleta esEspecial solo porque esCompleta" {
+		assert.that(provo1.esEspecial())
+	}
+	test "provoleta esEspecial por abundante y porque tiene especias"
+	{
+		assert.that(provo2.esEspecial())		
+	}		
+
+	test "provoleta  no esEspecial "
+	{
+		assert.that(not provo3.esEspecial())		
+	}			
+	
+	test "valoración hamburguesa vegetariana con pan de masaMadre" {
+		assert.equals( vege1.valoracion(), 121)
+	}
+
+	test "valoración haburguesa de carne con panCasero" {
+		assert.equals( carne1.valoracion(), 80)
+	}
+
+	test "valoracion parrillada" {
+		assert.equals(parri1.valoracion(), 105)
+	}
+}

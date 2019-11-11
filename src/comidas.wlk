@@ -1,5 +1,4 @@
 class Comida {
-
 	method peso()
 	method valoracion()
 	method esAptoVegetariano()	
@@ -43,7 +42,6 @@ class Parrillada inherits Comida {
 	override method esAptoVegetariano() = false
 	override method valoracion()  = 15 * cortes.max({c => c.calidad()}).calidad() - cortes.size()
 }
-
 
 object panIndustrial {
 	method valoracion() =0
