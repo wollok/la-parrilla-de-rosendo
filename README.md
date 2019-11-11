@@ -35,12 +35,14 @@ Se comportan igual que las hamburguesas de carne, con tres diferencias:
 * para cada hamburguesa, se informa de qué legumbre está hecha (por ejemplo: `"lentejas"` o `"garbanzos"`);
 * a la valoración se le suma otro plus, que se calcula como `2 * cantidad de letras del nombre de la legumbre`. Por ejemplo, si es de lentejas (que tiene 8 letras) el plus será de 16. 
 
-Chusmear la [Wollok Doc](https://www.wollok.org/documentacion/wollokdoc/), los strings comparten varios métodos con las colecciones. :wink:
+Conviene chusmear la [Wollok Doc](https://www.wollok.org/documentacion/wollokdoc/), los _strings_ comparten varios métodos con las colecciones. :wink:
 
 ### Parrillada
-Para cada parrillada se nos indica los cortes de carne pedidos. De cada corte se conoce su _calidad_ (un número) y su _peso_.
+Para cada parrillada se indica los cortes de carne pedidos. De cada corte se conoce su _calidad_ (un número) y su _peso_.
 
 El _peso_ de la parrillada es la suma de los pesos de sus cortes. No es _apto vegetariano_. La _valoración_ se calcula como `15 * máxima calidad de sus cortes - cantidad de cortes`, y no puede dar un resultado negativo.
+
+Ayudín: crear una clase para modelar los cortes y hacer que la parillada tenga una lista de cortes.
 
 ## 2. Comensales
 Ya tenemos la comida, ahora nos faltan los comensales. :fork_and_knife:
@@ -51,7 +53,7 @@ De cada comensal nos interesa saber:
 * las **comidas que comió**, una lista de todo lo que haya ingerido. Implementar un método `comer(unaComida)` que la agregue a la lista;
 * y si está **satisfecho**, lo cual explicaremos a continuación.
 
-Para que un comensal esté satisfecho, se tiene que cumplir que el peso de las comidas ingeridas sea mayor o igual al 1% de su propio peso _y además_ una condición que define cada comensal (para que quede claro: se tienen que cumplir _ambas_ condiciones).    
+Para que un comensal esté satisfecho, se tiene que cumplir que el peso de las comidas ingeridas sea mayor o igual al 1% de su propio peso _y además_ una condición que define cada comensal (para que quede claro: se tienen que cumplir _ambas_ condiciones).
 
 Consideraremos los siguientes tipos de comensales:
 
