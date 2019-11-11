@@ -85,6 +85,8 @@ Extender el sistema por el cual un comensal elige una comida de la cocina. Sigue
 * Los **hambrientos populares** eligen, entre las que les gustan, la más pesada.
 * Los **de paladar fino** eligen, entre las que les gustan, la que más se parezca a la ultima que comieron. Para simplificar, solo consideraremos si es vegetariana o no: si la ultima fue vegetariana, entonces eligen una vegetariana y viceversa. Si es la primera vez que van a la parrilla, eligen cualquiera.
 
+Conviene primero hacer un método en el comensal que reciba una lista de platos que le gustan y devuelva el plato elegido, y luego utilizar ese método en la cocina.
+
 ## 5. Estadísticas
 
 Agregar a la cocina los métodos para calcular las siguientes estadísticas:
