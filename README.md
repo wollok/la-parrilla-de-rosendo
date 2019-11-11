@@ -38,12 +38,17 @@ Para cada parrillada se nos indica los cortes de carne pedidos. De cada corte se
 El _peso_ de la parrillada es la suma de los pesos de sus cortes. No es _apto vegetariano_. La _valoración_ se calcula como `15 * máxima calidad de sus cortes - cantidad de cortes`, y no puede dar un resultado negativo.
 
 ## 2. Comensales
-Nos piden agregar al modelo a los comensales. De los comensales nos interesa saber si _le agrada una commida_, esto depende de su gusto culinario:
-- A los **vegetarianos** les agradan las comidas que son aptas vegetariano y tienen una valoración mayor a 85.
-- A los de **hambre popular** simplemente les agradan las comidas abundantes.
-- A los **exquisitos** les agradan las comidas que pesan entre 150gr y 300gr, y además tengan una valoración mayor a 100.
+Ya tenemos la comida, ahora nos faltan los comensales. :fork_and_knife:
 
-Por ahora nos piden modelar estos tipos de comensales, sabiendo que es posible que se agreguen más en el futuro.
+De cada comensal nos interesa saber si **le agrada una comida**, lo cual dependerá de su gusto culinario:
+- a los **vegetarianos** les agradan las comidas que son aptas vegetariano y tienen una valoración mayor a 85;
+- a los de **hambre popular** simplemente les agradan las comidas abundantes;
+- a los **exquisitos** les agradan las comidas que pesan entre 150gr y 300gr, y además tienen una valoración mayor a 100.
+
+
+_@faloi dice: hasta acá llegué..._
+
+**TODO:** agregar registro de comidas. Se guardan en una lista, usarlo después para calcular si un comensal está satisfecho.
 
 ## 3. Menú
 Se quiere agregar al modelo un menú, que tiene _todas las comidas_ que se ofrecen en la parrilla. Se quiere conocer
@@ -55,7 +60,7 @@ Se quiere agregar al modelo un menú, que tiene _todas las comidas_ que se ofrec
 También se pide **poder elegir un plato** del menú para un comensal. Por ahora es cualquier plato que le guste. Si no le gusta ningún plato del menú entonces se debería lanzar un error específico.
 
 
-## 5. Secreto parrillero
+## 4. Secreto parrillero
 Por último, se nos pide agregar a Rosendo al sistema para saber cómo queda su parrilla luego de cocinar para un grupo de comensales. Esto significa, al recibir colección de comensales:
 - Tomar sus pedidos, o sea, que elijan un plato del menú.
 - Cocinarlos todos: el secreto de Rosendo es dejar las comidas en la parrilla un rato más para que _se tuesten_. 
@@ -63,8 +68,8 @@ Al tostar una comida, todas ellas reaccionan aumentando su valoración un 50%. P
 
 El sistema debe poder determinar cómo queda la parrilla (o sea, las comidas) luego de recibir a un conjunto de comensales.
 
-## 6. BONUS: Criterios de hambre
+## 5. BONUS: Criterios de hambre
 A Rosendo le gustaría extender el sistema por el cual un comensal elige una comida del menú. Sigue mantieniendo que debe ser una comida que le guste, pero por lo general no eligen cualquiera al azar, sino que tenemos los siguientes patrones:
-- Los **hambrientos** elijen, entre las comidas del menú que le gustan al comensal, la primera abundante.
-- Los **glotones** elijen, entre las comidas del menú que le gustan al comensal, la más pesada
-- Los **memoriosos** elijen, entre las comidas del menú que le gustan al comensal, la que pidieron la última vez. Pero si es la primera que va, o la comida no se encuentra en el menú (porque la sacaron o porque le dejó de gustar), elije cualquiera (y la recuerda, obviamente).
+- Los **hambrientos** eligen, entre las comidas del menú que le gustan al comensal, la primera abundante.
+- Los **glotones** eligen, entre las comidas del menú que le gustan al comensal, la más pesada
+- Los **memoriosos** eligen, entre las comidas del menú que le gustan al comensal, la que pidieron la última vez. Pero si es la primera que va, o la comida no se encuentra en el menú (porque la sacaron o porque le dejó de gustar), elije cualquiera (y la recuerda, obviamente).
