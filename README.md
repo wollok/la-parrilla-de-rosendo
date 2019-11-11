@@ -74,7 +74,9 @@ Se quiere poder consultar:
 * **el plato fuerte carnívoro**: el de mejor valoración entre los no apto vegetariano;
 * dado un comensal, la lista de **comidas que le gustan**.
 
-También se pide **poder elegir un plato** para un comensal - por ahora es cualquier plato que le guste. Si no le gusta ningún plato, lanzar un error. Si el plato existe, sacarlo de la cocina y hacer que el comensal lo coma.
+También se pide **poder elegir un plato** para un comensal - por ahora es cualquier plato que le guste de los que hay en la cocina. Si no le gusta ningún plato, lanzar un error. Si el plato existe, sacarlo de la cocina y hacer que el comensal lo coma.
+
+**Ojo :eyes::** este método debe modificar al comensal y a la cocina. Para los tests, puede convenir crear un método auxiliar que solo devuelva el plato elegido y luego usar este método en el principal.
 
 ## 4. Criterios de selección de comida
 Extender el sistema por el cual un comensal elige una comida de la cocina. Sigue manteniendose que debe ser una comida que le guste, pero en vez de elegir cualquiera se utilizan los siguientes criterios:
@@ -82,3 +84,18 @@ Extender el sistema por el cual un comensal elige una comida de la cocina. Sigue
 * Los **vegetarianos** eligen, entre las que les gustan, la primera que no sea abundante.
 * Los **hambrientos populares** eligen, entre las que les gustan, la más pesada.
 * Los **de paladar fino** eligen, entre las que les gustan, la que más se parezca a la ultima que comieron. Para simplificar, solo consideraremos si es vegetariana o no: si la ultima fue vegetariana, entonces eligen una vegetariana y viceversa. Si es la primera vez que van a la parrilla, eligen cualquiera.
+
+## 5. Estadísticas
+
+Agregar a la cocina los métodos para calcular las siguientes estadísticas:
+
+### Polos opuestos
+
+Dados dos comensales, verificar si son **polos opuestos**, lo cual es cierto si no hay ninguna comida que les guste a ambos.
+
+### Almuerzo grupal
+
+Dado un grupo de comensales (una lista), verificar si **pueden comer** en la parilla. Para esto, tener en cuenta que todos los comensales comerán al mismo tiempo y, por lo tanto, los platos tendrían que alcanzar para todos. 
+
+A modo de ejemplo: si en el grupo hay tres vegetarianos y en la cocina solo hay dos platos apto vegetariano, ese grupo no puede comer en la parrilla. No alcanza con chequear que haya algún plato que le guste a cada uno, hay que pensar un algoritmo que sirva para todo el conjunto de comensales.
+
