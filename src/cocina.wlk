@@ -1,4 +1,5 @@
 import comidas.*
+import comensales.*
 object cocina {
 	var comidasPreparadas = []
 	method agregarComida(unaComida){

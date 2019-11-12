@@ -1,0 +1,80 @@
+import comidas.*
+import cocina.*
+import comensales.*
+
+describe "criterios de comida test" {
+	
+	const comvege1 = new Vegetariano(peso=7500)
+	const popular1 = new HambrePopular(peso = 11500)
+	const exq1 = new Exquisito(peso = 8000)
+	const exq2 = new Exquisito(peso = 8000)
+	const exq3 = new Exquisito(peso = 8000)
+	
+	const provo1 = new Provoleta(peso = 80, tieneEspecias=true, esCompleta = true)
+	const provo2 = new Provoleta(peso = 260, tieneEspecias=true, esCompleta = false)	
+	const provo3 = new Provoleta(peso = 260, tieneEspecias=false, esCompleta = false)
+	const vege1 = new HamburguesaVegetariana(pan=panIndustrial, legumbre ="lentajas")
+	const vege2 = new HamburguesaVegetariana(pan=panCasero, legumbre ="garbanzos")
+	const carne1 = new HamburguesaDeCarne(pan=panDeMasaMadre)
+	const parri1 = new Parrillada()
+	const parri2 = new Parrillada()
+	const corte1 = new Corte(peso=250, calidad=10 )
+	const corte2 = new Corte(peso = 150, calidad= 7)
+	const corte3 = new Corte(peso = 50, calidad = 8)
+
+	fixture {
+			parri1.agregarCorte(corte1)
+			parri1.agregarCorte(corte2)
+			parri1.agregarCorte(corte3)
+			parri2.agregarCorte(corte2)
+			
+			cocina.agregarComida(provo1)
+			cocina.agregarComida(provo2)
+			cocina.agregarComida(provo3)
+			cocina.agregarComida(vege1)
+			cocina.agregarComida(vege2)
+			cocina.agregarComida(carne1)
+			cocina.agregarComida(parri1)
+			cocina.agregarComida(parri2)
+			
+			popular1.comer(provo1)
+			popular1.comer(parri1)
+			popular1.comer(carne1)
+			popular1.comer(parri2)
+		
+			exq1.comer(provo3)
+			exq1.comer(carne1)
+			exq1.comer(vege2)
+			
+			
+			exq2.comer(provo1)
+			exq2.comer(provo2)
+			exq2.comer(vege1)
+			exq2.comer(parri2)
+			
+			
+			
+	}
+
+	test " habrientos populares" {
+		cocina.elegirPlatoParaConCriterio(popular1)
+		assert.equals(popular1.comidas().last(), parri1)
+	}
+	
+	test " paladar fino vegetariano" {
+		cocina.elegirPlatoParaConCriterio(exq1)
+		assert.equals(exq1.comidas().last(), provo2)
+	}
+	
+	test " paladar fino carnivoro" {
+		cocina.elegirPlatoParaConCriterio(exq2)
+		assert.equals(exq2.comidas().last(), carne1)
+	}
+	
+	test " paladar fino sin comer" {
+		cocina.elegirPlatoParaConCriterio(exq3)
+		assert.equals(exq3.comidas().last(), provo2)
+	}
+}
+
+

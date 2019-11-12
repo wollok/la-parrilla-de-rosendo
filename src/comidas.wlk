@@ -38,7 +38,7 @@ class Parrillada inherits Comida {
 	var cortes = []
 	method agregarCorte(unCorte) { cortes.add(unCorte) }
 	method sacarUnCorte(unCorte) { cortes.remove(unCorte)}
-	override method peso () = return cortes.sum { c => c.peso() }
+	override method peso () =  cortes.sum { c => c.peso() }
 	override method esAptoVegetariano() = false
 	override method valoracion()  = 15 * cortes.max({c => c.calidad()}).calidad() - cortes.size()
 }

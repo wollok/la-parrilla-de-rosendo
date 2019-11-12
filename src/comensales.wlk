@@ -4,8 +4,9 @@ class Comensal {
 	var property peso = 0
 	method leAgrada(unaComida)
 	method comer(unaComida){ comidas.add(unaComida)}
+	method comidas() = return comidas
 	method satisfecho() = self.pesosComida() > peso * 0.01
-	method pesosComida() = comidas.sum { c => c.peso()}
+	method pesosComida() = comidas.sum( { c => c.peso() } ) 
 	method seleccionarConCriterio(comidasQueLeGustan)
 }
 
@@ -23,7 +24,7 @@ class HambrePopular inherits Comensal {
 	override method seleccionarConCriterio(comidasQueLeGustan) = comidasQueLeGustan.max { c => c.peso() }
 }
 
-class Exquisitos inherits Comensal {
+class Exquisito inherits Comensal {
 	override method leAgrada(unaComida) {
 		return unaComida.peso().between(150,300) and unaComida.valoracion() > 100
 	 }
@@ -31,7 +32,7 @@ class Exquisitos inherits Comensal {
 	method cantidadDeComidasPar () = comidas.size().even()
 	override method seleccionarConCriterio(comidasQueLeGustan) {
 		if (not comidas.isEmpty()) {
-			return comidasQueLeGustan.find { c=> c == comidas.last() }
+			return comidasQueLeGustan.find { c=> c.esAptoVegetariano() == comidas.last().esAptoVegetariano() }
 		} else {
 			return comidasQueLeGustan.first()
 		}
