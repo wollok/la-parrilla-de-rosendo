@@ -73,7 +73,8 @@ Agregar al modelo la cocina, que tiene _todos los platos_ que la parrilla tiene 
 Se quiere poder consultar:
 * si **tiene buena oferta vegetariana**: esto es así si la diferencia entre platos vegetarianos y no vegetarianos es de a lo sumo 2. Por ejemplo: si hay 10 carnívoros y 8 vegetarianos sí tiene buena oferta, pero si hay 11 carnívoros no (porque la diferencia es mayor a 2).
 * **el plato fuerte carnívoro**: el de mejor valoración entre los no apto vegetariano;
-* dado un comensal, la lista de **platos que le gustan**.
+* dado un comensal, la lista de **platos que le gustan**;
+* dados dos comensales, saber si son **polos opuestos**, lo cual es cierto si ningún plato que hay en la cocina les gusta a los dos.
 
 También se pide poder **servir un plato** para un comensal - cualquier plato que le guste de los que hay en la cocina. Si no le gusta ningún plato, lanzar un error. Si el plato existe, sacarlo de la cocina y hacer que el comensal lo coma.
 
@@ -87,18 +88,3 @@ Extender el sistema por el cual un comensal elige una comida de la cocina. Sigue
 * Los **de paladar fino** eligen, entre las que les gustan, la que más se parezca a la ultima que comieron. Para simplificar, solo consideraremos si es vegetariana o no: si la ultima fue vegetariana, entonces eligen una vegetariana y viceversa. Si es la primera vez que van a la parrilla, eligen cualquiera.
 
 Conviene primero hacer un método en el comensal que reciba una lista de platos que le gustan y devuelva el plato elegido, y luego utilizar ese método en la cocina.
-
-## 5. Estadísticas
-
-Agregar a la cocina los métodos para calcular las siguientes estadísticas:
-
-### Polos opuestos
-
-Dados dos comensales, verificar si son **polos opuestos**, lo cual es cierto si no hay ninguna comida que les guste a ambos.
-
-### Almuerzo grupal
-
-Dado un grupo de comensales (una lista), verificar si **pueden comer** en la parilla. Para esto, tener en cuenta que todos los comensales comerán al mismo tiempo y, por lo tanto, los platos tendrían que alcanzar para todos. 
-
-A modo de ejemplo: si en el grupo hay tres vegetarianos y en la cocina solo hay dos platos apto vegetariano, ese grupo no puede comer en la parrilla. No alcanza con chequear que haya algún plato que le guste a cada uno, hay que pensar un algoritmo que sirva para todo el conjunto de comensales.
-
