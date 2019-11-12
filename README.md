@@ -18,7 +18,7 @@ Consideraremos inicialmente estos platos:
 ### Provoleta
 Cada provoleta tiene un peso diferente. Se debe informar además si **tiene especias** y si **es completa** (o sea, con jamón y morrones). La provoleta común es _apta vegetariano_, mientras que la completa no. 
 
-Su _valoración_ es de 120 puntos si es especial, y de 85 en caso contrario. Decimos que una provoleta es especial cuando se cumple alguna de estas condiciones:
+Su _valoración_ es de 120 puntos si **es especial**, y de 85 en caso contrario. Decimos que una provoleta es especial cuando se cumple alguna de estas condiciones:
 * _es abundante_ y _tiene especias_;
 * o _es completa_. 
 
