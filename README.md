@@ -2,11 +2,11 @@
 
 ![La parrilla de Rosendo](images/parrilla.jpg)
 
-Nuestro amigo Rosendo inauguró su parrilla y nos pidió un sistema para administrar las comidas que ofrece, sus comensales y sacar algunas estadísticas.
+Nuestro amigo Rosendo inauguró su parrilla y nos pidió un sistema para administrar los platos que ofrece, sus comensales y sacar algunas estadísticas.
 
 ¡Comencemos! :yum:
 
-## 1. Comidas
+## 1. Platos
 Nos piden modelar los distintos platos que ofrece la parrilla. De cada uno de ellos nos interesa conocer:
 * su **peso**, medido en gramos;
 * si es **apto vegetariano**;
@@ -24,7 +24,7 @@ Su _valoración_ es de 120 puntos si es especial, y de 85 en caso contrario. Dec
 
 ### Hamburguesas de carne
 Su _peso_ es siempre de 250 gramos y lógicamente no son _aptas para vegetariano_. 
-A cada hamburguesa se le configura su pan, y la _valoración_ del plato se calcula como `60 + valoración del pan`. Los panes posibles son:
+A cada hamburguesa se le configura su pan, y la _valoración_ se calcula como `60 + valoración del pan`. Los panes posibles son:
 * **industrial** otorga 0 puntos;
 * **casero** otorga 20 puntos;
 * **de masa madre** otorga 45 puntos.
@@ -45,36 +45,36 @@ El _peso_ de la parrillada es la suma de los pesos de sus cortes. No es _apto ve
 Ayudín: crear una clase para modelar los cortes y hacer que la parillada tenga una lista de cortes.
 
 ## 2. Comensales
-Ya tenemos la comida, ahora nos faltan los comensales. :fork_and_knife:
+Ya tenemos los platos, ahora nos faltan los comensales. :fork_and_knife:
 
 De cada comensal nos interesa saber: 
 * su **peso**, medido en gramos;
-* si **le agrada una comida**, lo cual dependerá de su gusto culinario;
-* las **comidas que comió**, una lista de todo lo que haya ingerido. Implementar un método `comer(unaComida)` que la agregue a la lista;
+* si **le agrada un plato**, lo cual dependerá de su gusto culinario;
+* los **platos que comió**, una lista de todo lo que haya ingerido. Implementar un método `comer(unPlato)` que lo agregue a la lista;
 * y si está **satisfecho**, lo cual explicaremos a continuación.
 
-Para que un comensal esté satisfecho, se tiene que cumplir que el peso de las comidas ingeridas sea mayor o igual al 1% de su propio peso _y además_ una condición que define cada comensal (para que quede claro: se tienen que cumplir _ambas_ condiciones).
+Para que un comensal esté satisfecho, se tiene que cumplir que el peso de los platos ingeridos sea mayor o igual al 1% de su propio peso _y además_ una condición que define cada comensal (para que quede claro: se tienen que cumplir _ambas_ condiciones).
 
 Consideraremos los siguientes tipos de comensales:
 
 ### Vegetarianos
-Les agradan las comidas que son aptas vegetariano y tienen una valoración mayor o igual a 85. La condición adicional para estar satisfechos es que ninguna comida de las ingeridas sea abundante.
+Les agradan los platos que son apto vegetariano y tienen una valoración mayor o igual a 85. La condición adicional para estar satisfechos es que ninguno de los platos ingeridos sea abundante.
 
 ### Hambre popular
-Simplemente les agradan las comidas abundantes. No tienen ninguna condición adicional para estar satisfechos.
+Simplemente les agradan los platos abundantes. No tienen ninguna condición adicional para estar satisfechos.
 
 ### De paladar fino
-Les agradan las comidas que pesan entre 150 y 300 gramos, y además tienen una valoración mayor a 100. La condición adicional para satisfacerse es que la cantidad de comidas ingeridas sea par. 
+Les agradan los platos que pesan entre 150 y 300 gramos, y además tienen una valoración mayor a 100. La condición adicional para satisfacerse es que la cantidad de platos ingeridos sea par. 
 
 ## 3. Cocina
-Agregar al modelo la cocina, que tiene _todas las comidas_ que la parrilla tiene preparadas. 
+Agregar al modelo la cocina, que tiene _todos los platos_ que la parrilla tiene preparados. 
 
 Se quiere poder consultar:
-* si **tiene buena oferta vegetariana**: esto es así si la diferencia entre comidas vegetarianas y no vegetarianas es de a lo sumo 2. Por ejemplo: si hay 10 carnívoras y 8 vegetarianas sí tiene buena oferta, pero si hay 11 carnívoras no (porque la diferencia es mayor a 2).
+* si **tiene buena oferta vegetariana**: esto es así si la diferencia entre platos vegetarianos y no vegetarianos es de a lo sumo 2. Por ejemplo: si hay 10 carnívoros y 8 vegetarianos sí tiene buena oferta, pero si hay 11 carnívoros no (porque la diferencia es mayor a 2).
 * **el plato fuerte carnívoro**: el de mejor valoración entre los no apto vegetariano;
-* dado un comensal, la lista de **comidas que le gustan**.
+* dado un comensal, la lista de **platos que le gustan**.
 
-También se pide **poder elegir un plato** para un comensal - por ahora es cualquier plato que le guste de los que hay en la cocina. Si no le gusta ningún plato, lanzar un error. Si el plato existe, sacarlo de la cocina y hacer que el comensal lo coma.
+También se pide poder **servir un plato** para un comensal - cualquier plato que le guste de los que hay en la cocina. Si no le gusta ningún plato, lanzar un error. Si el plato existe, sacarlo de la cocina y hacer que el comensal lo coma.
 
 **Ojo :eyes::** este método debe modificar al comensal y a la cocina. Para los tests, puede convenir crear un método auxiliar que solo devuelva el plato elegido y luego usar este método en el principal.
 
