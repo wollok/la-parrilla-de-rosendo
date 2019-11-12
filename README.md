@@ -18,7 +18,7 @@ Consideraremos inicialmente estos platos:
 ### Provoleta
 Cada provoleta tiene un peso diferente. Se debe informar además si **tiene especias** y si **es completa** (o sea, con jamón y morrones). La provoleta común es _apta vegetariano_, mientras que la completa no. 
 
-Su _valoración_ es de 120 puntos si es especial, y de 80 en caso contrario. Decimos que una provoleta es especial cuando se cumple alguna de estas condiciones:
+Su _valoración_ es de 120 puntos si es especial, y de 85 en caso contrario. Decimos que una provoleta es especial cuando se cumple alguna de estas condiciones:
 * _es abundante_ y _tiene especias_;
 * o _es completa_. 
 
@@ -58,7 +58,7 @@ Para que un comensal esté satisfecho, se tiene que cumplir que el peso de las c
 Consideraremos los siguientes tipos de comensales:
 
 ### Vegetarianos
-Les agradan las comidas que son aptas vegetariano y tienen una valoración mayor a 85. La condición adicional para estar satisfechos es que ninguna comida de las ingeridas sea abundante.
+Les agradan las comidas que son aptas vegetariano y tienen una valoración mayor o igual a 85. La condición adicional para estar satisfechos es que ninguna comida de las ingeridas sea abundante.
 
 ### Hambre popular
 Simplemente les agradan las comidas abundantes. No tienen ninguna condición adicional para estar satisfechos.
