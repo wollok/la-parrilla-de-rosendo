@@ -49,7 +49,7 @@ Ya tenemos los platos, ahora nos faltan los comensales. :fork_and_knife:
 
 De cada comensal nos interesa saber: 
 * su **peso**, medido en gramos;
-* si **le agrada un plato**, lo cual dependerá de su gusto culinario;
+* si **le agrada un plato** determinado (que pasaremos por parámetro), lo cual dependerá de su gusto culinario;
 * los **platos que comió**, una lista de todo lo que haya ingerido. Implementar un método `comer(unPlato)` que lo agregue a la lista;
 * y si está **satisfecho**, lo cual explicaremos a continuación.
 
