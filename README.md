@@ -38,11 +38,12 @@ Se comportan igual que las hamburguesas de carne, con tres diferencias:
 Conviene chusmear la [Wollok Doc](https://www.wollok.org/documentacion/wollokdoc/), los _strings_ comparten varios métodos con las colecciones. :wink:
 
 ### Parrillada
-Para cada parrillada se indica los cortes de carne pedidos. De cada corte se conoce su _calidad_ (un número) y su _peso_.
+Para cada parrillada se indica cuántos cortes de carne trae. Para simplificar, diremos que cada corte pesa siempre 250 gramos.
 
-El _peso_ de la parrillada es la suma de los pesos de sus cortes. No es _apto vegetariano_. La _valoración_ se calcula como `15 * máxima calidad de sus cortes - cantidad de cortes`, y no puede dar un resultado negativo.
-
-Ayudín: crear una clase para modelar los cortes y hacer que la parillada tenga una lista de cortes.
+El _peso_ de la parrillada es la suma de los pesos de sus cortes. No es _apto vegetariano_. La _valoración_ se calcula como: 
+* 140 si tiene 6 o más cortes, 
+* 100 si tiene 4 o 5 cortes, 
+* 70 si tiene 3 ó menos.
 
 ## 2. Comensales
 Ya tenemos los platos, ahora nos faltan los comensales. :fork_and_knife:
