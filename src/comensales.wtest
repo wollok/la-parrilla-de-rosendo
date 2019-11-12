@@ -1,0 +1,73 @@
+import comidas.*
+import comensales.*
+
+describe "comensales" {
+		
+	const comvege1 = new Vegetariano(peso=7500)
+	const comvege2 = new Vegetariano(peso=9500)
+	const popular1 = new HambrePopular(peso = 11500)
+	const popular2 = new  HambrePopular(peso = 9000)
+	
+	const provo1 = new Provoleta(peso = 80, tieneEspecias=true, esCompleta = true)
+	const provo2 = new Provoleta(peso = 260, tieneEspecias=true, esCompleta = false)	
+	const provo3 = new Provoleta(peso = 260, tieneEspecias=false, esCompleta = false)
+	const vege1 = new HamburguesaVegetariana(pan=panIndustrial, legumbre ="lentajas")
+	const carne1 = new HamburguesaDeCarne(pan=panCasero)
+	const parri1 = new Parrillada()
+	const parri2 = new Parrillada()
+	const corte1 = new Corte(peso=250, calidad=10 )
+	const corte2 = new Corte(peso = 150, calidad= 7)
+	const corte3 = new Corte(peso = 50, calidad = 8)
+	
+	fixture {
+			parri1.agregarCorte(corte1)
+			parri1.agregarCorte(corte2)
+			parri1.agregarCorte(corte3)
+			parri2.agregarCorte(corte3)
+			comvege1.comer(vege1)
+			comvege1.comer(provo1)
+			comvege2.comer(provo2)
+			popular1.comer(parri1)
+			popular2.comer(parri2)
+	}
+	
+	test "vegetariano si le agrada la comida " {
+		assert.that(comvege1.leAgrada(vege1))
+		assert.that(comvege1.leAgrada(provo2))
+	}
+	test "vegetariano no le agrada la comida" {
+		assert.that(not comvege2.leAgrada(provo1))
+		assert.that(not comvege2.leAgrada(parri1))
+		assert.that(not comvege2.leAgrada(carne1))
+		assert.that(not comvege2.leAgrada(provo3))
+	}
+	
+	test "vegetariano esta satisfecho" {
+		// Comidas = 250 + 80 = 330
+		// Peso comensal 7500 gramos * 0.01
+		// 330 > 75 true
+		assert.that (comvege1.satisfecho())
+	}
+
+	test "vegetariano no esta satisfecho" {
+		// Comidas = 80 
+		// Peso comensal 9500 gramos * 0.01
+		// 80 > 95 false
+		assert.that (not comvege2.satisfecho())
+	}
+
+	test "popular esta satisfecho" {
+		// Comidas = 450 
+		// Peso comensal 11500 gramos * 0.01
+		// 450 > 115 false
+		assert.that ( popular1.satisfecho())
+	}
+	test "popular not esta satisfecho" {
+		// Comidas = 50 
+		// Peso comensal 9000 gramos * 0.01
+		// 50 > 90 false
+		assert.that ( not popular2.satisfecho())
+	}	
+	
+
+}
