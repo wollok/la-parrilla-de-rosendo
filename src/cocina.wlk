@@ -6,7 +6,7 @@ object cocina {
 			comidasPreparadas.add(unaComida)
 	}
 	method tieneBuenaOfertaVegetariana() {
-		return (self.totalComidasVegetarianas() - self.totalComidasNoVegetarianas() ) >2
+		return ( self.totalComidasNoVegetarianas() - self.totalComidasVegetarianas()).abs() >2
 	}
 	method totalComidasVegetarianas() = comidasPreparadas.count {c=> c.esAptoVegetariano()}
 	method totalComidasNoVegetarianas() = comidasPreparadas.count { c => not c.esAptoVegetariano()}
